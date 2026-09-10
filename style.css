@@ -1,1 +1,112 @@
+/*Cấu hình chung*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/*Thẻ chứa nội dung chính (Container)*/
+main,
+header {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/*Tiêu đề*/
+h1 {
+    color: #1e3a8a;
+    font-size: 26px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h2 {
+    color: #2563eb;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 6px;
+}
+
+/*Ảnh đại diện*/
+img {
+    display: block;
+    margin: 15px auto;
+    border-radius: 50%;
+    /*Làm tròn ảnh đại diện*/
+    object-fit: cover;
+    border: 4px solid #2563eb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/*Danh sách thành viên (Trang chung index.html)*/
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 12px;
+}
+
+/*Trang cá nhân: Danh sách thông tin*/
+section ul li {
+    background: #f8fafc;
+    padding: 10px 15px;
+    border-left: 4px solid #2563eb;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+/*Thẻ liên kết (Link / Nút nhấn)*/
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+/*Biến các link thành viên ở trang chủ thành nút bấm giao diện mượt mà*/
+section ul li a {
+    display: block;
+    background: #eff6ff;
+    padding: 14px 20px;
+    border-radius: 8px;
+    border: 1px solid #bfdbfe;
+    color: #1e40af;
+    text-align: center;
+}
+
+section ul li a:hover {
+    background: #2563eb;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/*Nút quay lại trang chủ*/
+.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 18px;
+    background: #64748b;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.btn-back:hover {
+    background: #475569;
+}
