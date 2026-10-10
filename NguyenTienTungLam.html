@@ -4,51 +4,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Giới Thiệu Cá Nhân-Nguyễn Tiến Tùng Lâm</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Nguyễn Tiến Tùng Lâm - Giới thiệu cá nhân</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f5f7fb;
+            color: #263238;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e1e5eb;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            color: #263238;
+            margin: 0;
+        }
+
+        .header span {
+            color: #536575;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 45px auto;
+            padding: 0 20px;
+        }
+
+        .profile {
+            background: white;
+            border-radius: 18px;
+            border: 1px solid #e1e5eb;
+            overflow: hidden;
+        }
+
+        .cover {
+            height: 145px;
+            background: linear-gradient(120deg, #dcecff, #c6e7e1);
+        }
+
+        .profile-body {
+            padding: 0 35px 35px;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-top: -75px;
+            position: relative;
+            background: #e8eef5;
+            display: block;
+        }
+
+        .name {
+            font-size: 29px;
+            margin: 15px 0 3px;
+            color: #182d40;
+        }
+
+        .role {
+            margin: 0 0 25px;
+            color: #586b7c;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 25px;
+        }
+
+        .section {
+            background: #f8fafc;
+            border: 1px solid #e5eaf0;
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .section h2 {
+            font-size: 19px;
+            margin: 0 0 18px;
+            color: #173b57;
+        }
+
+        .info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info li {
+            padding: 9px 0;
+            border-bottom: 1px solid #e4eaf0;
+        }
+
+        .info li:last-child {
+            border-bottom: none;
+        }
+
+        .info strong {
+            display: inline-block;
+            min-width: 120px;
+            color: #435a6c;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #e4f1ff;
+            color: #174e7c;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .goal {
+            margin: 0;
+            padding: 15px;
+            background: #eaf5f0;
+            border-left: 4px solid #298563;
+            border-radius: 5px;
+        }
+
+        .social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .facebook {
+            background: #1877f2;
+            color: white;
+        }
+
+        .github {
+            background: #24292f;
+            color: white;
+        }
+
+        .social a:hover {
+            transform: translateY(-3px);
+        }
+
+        .back {
+            text-align: center;
+            margin-top: 28px;
+        }
+
+        .back a {
+            display: inline-block;
+            background: #173b57;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .back a:hover {
+            background: #28658b;
+        }
+
+        a:focus-visible {
+            outline: 3px solid #d99b20;
+            outline-offset: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+
+        @media (max-width: 700px) {
+            .header {
+                padding: 18px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .container {
+                margin: 20px auto;
+                padding: 0 12px;
+            }
+
+            .profile-body {
+                padding: 0 18px 25px;
+            }
+
+            .details {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+
+            .name {
+                font-size: 24px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .social a {
+                transition: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1>Trang Giới Thiệu Cá Nhân</h1>
+
+    <header class="header">
+        <h1>Student Profile</h1>
+        <span>Trang giới thiệu cá nhân</span>
     </header>
 
-    <main>
-        <section>
-            <img src="images/anhtheNTTL.jpg" alt="Ảnh đại diện của Nguyễn Tiến Tùng Lâm" width="150" height="150">
-            <h2>Thông Tin Cơ Bản</h2>
-            <ul>
-                <li><strong>Họ và tên:</strong> Nguyễn Tiến Tùng Lâm</li>
-                <li><strong>Mã sinh viên:</strong> 24100255</li>
-                <li><strong>Ngày sinh:</strong> 05/12/2006</li>
-                <li><strong>Giới tính:</strong> Nam</li>
-            </ul>
-        </section>
+    <main class="container">
+        <article class="profile">
 
-        <section>
-            <h2>Sở Thích & Sở Trường</h2>
-            <p><strong>Sở thích:</strong> Chơi game, Xem phim, Nghe nhạc.
-            </p>
-            <p><strong>Sở trường:</strong> Không rõ.</p>
-        </section>
+            <div class="cover"></div>
 
-        <section>
-            <h2>Thông Tin Bổ Sung</h2>
-            <p><strong>Mục tiêu nghề nghiệp:</strong> Có công việc ổn định.
-            </p>
-            <p><strong>Liên kết mạng xã hội:</strong>
-                <a href="https://www.facebook.com/Muahahahahahahahahahahaaa" target="_blank">GitHub</a> |
-                <a href="https://github.com/tlam512?fbclid=IwY2xjawUPNwhwZG9mBWV4dG4DYWVtAjEwAGJyaWQRMTZEQVFxVzNScWdMY2E2clRzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeIwMoDbbrewrMxospwKFHB8Nxn8X-yxPqw1B920rioEe04zlufJTPtbi-pio_aem_hC8tZngBEOW6ALyHKvqDJQ"
-                    target="_blank">Facebook</a>
-            </p>
-        </section>
+            <div class="profile-body">
+
+                <img src="images/anhtheNTTL.jpg" alt="Ảnh đại diện Nguyễn Tiến Tùng Lâm" class="avatar" width="150"
+                    height="150">
+
+                <h2 class="name">Nguyễn Tiến Tùng Lâm</h2>
+                <p class="role">Sinh viên | MSV: 24100255</p>
+
+                <div class="details">
+
+                    <section class="section">
+                        <h2>Thông tin cơ bản</h2>
+
+                        <ul class="info">
+                            <li>
+                                <strong>Họ và tên:</strong>
+                                Nguyễn Tiến Tùng Lâm
+                            </li>
+                            <li>
+                                <strong>Mã sinh viên:</strong>
+                                24100255
+                            </li>
+                            <li>
+                                <strong>Ngày sinh:</strong>
+                                05/12/2006
+                            </li>
+                            <li>
+                                <strong>Giới tính:</strong>
+                                Nam
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="section">
+                        <h2>Sở thích &amp; Sở trường</h2>
+
+                        <p><strong>Sở thích:</strong></p>
+
+                        <div class="tags">
+                            <span class="tag">Chơi game</span>
+                            <span class="tag">Xem phim</span>
+                            <span class="tag">Nghe nhạc</span>
+                        </div>
+
+                        <p>
+                            <strong>Sở trường:</strong>
+                            Không rõ.
+                        </p>
+                    </section>
+
+                    <section class="section full-width">
+                        <h2>Thông tin bổ sung</h2>
+
+                        <p class="goal">
+                            <strong>Mục tiêu nghề nghiệp:</strong>
+                            Có công việc ổn định.
+                        </p>
+
+                        <h2 style="margin-top: 25px;">
+                            Liên kết mạng xã hội
+                        </h2>
+
+                        <div class="social">
+                            <a href="https://www.facebook.com/Muahahahahahahahahahahaaa" target="_blank"
+                                rel="noopener noreferrer" class="facebook">
+                                Facebook
+                            </a>
+
+                            <a href="https://github.com/tlam512" target="_blank" rel="noopener noreferrer"
+                                class="github">
+                                GitHub
+                            </a>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </article>
+
+        <div class="back">
+            <a href="index.html">
+                ← Quay lại trang danh sách nhóm
+            </a>
+        </div>
     </main>
-</body>
-<hr>
-<p>
-    <a href="index.html">← Quay lại trang danh sách nhóm</a>
-</p>
-</main>
+
+    <footer>
+        <p>&copy; 2026 - Nguyễn Tiến Tùng Lâm</p>
+    </footer>
+
 </body>
 
 </html>
