@@ -1,80 +1,470 @@
-<section class="card">
-    <h2>01. Thông tin cá nhân</h2>
+<!DOCTYPE html>
+<html lang="vi">
 
-    <ul class="info-list">
-        <li>
-            <strong>Họ và tên</strong>
-            <span>Nguyễn Tiến Thái</span>
-        </li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Tiến Thái | Personal Portfolio</title>
 
-        <li>
-            <strong>Mã sinh viên</strong>
-            <span>24100277</span>
-        </li>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-        <li>
-            <strong>Ngày sinh</strong>
-            <span>16/09/2006</span>
-        </li>
+        html {
+            scroll-behavior: smooth;
+        }
 
-        <li>
-            <strong>Giới tính</strong>
-            <span>Nam</span>
-        </li>
-    </ul>
-</section>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f7f6fc;
+            color: #25243a;
+            line-height: 1.6;
+        }
 
-<section class="card">
-    <h2>02. Sở thích</h2>
+        /* Thanh điều hướng */
 
-    <div class="hobbies">
-        <div class="hobby">Đọc sách công nghệ</div>
-        <div class="hobby">Đá bóng</div>
-        <div class="hobby">Nghe nhạc Lofi</div>
-    </div>
-</section>
+        .navbar {
+            background: #ffffff;
+            border-bottom: 1px solid #e7e3f2;
+            padding: 17px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-<section class="card full">
-    <h2>03. Sở trường &amp; Kỹ năng</h2>
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            color: #6034a5;
+            letter-spacing: 1px;
+        }
 
-    <div class="skills">
-        <span class="skill">HTML</span>
-        <span class="skill">CSS</span>
-        <span class="skill">Lập trình Web</span>
-        <span class="skill">Làm việc nhóm</span>
-        <span class="skill">Giải quyết vấn đề</span>
-    </div>
-</section>
+        .navbar a {
+            color: #512c8e;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 8px;
+        }
 
-<section class="card full">
-    <h2>04. Định hướng tương lai</h2>
+        .navbar a:hover {
+            background: #f0e8fc;
+        }
 
-    <div class="career">
-        <h3>Mục tiêu nghề nghiệp</h3>
-        <p>
-            Trở thành Full-stack Developer
-            trong 2 năm tới.
-        </p>
-    </div>
+        /* Phần giới thiệu */
 
-    <div class="social">
-        <a href="https://github.com/nthaiw206" target="_blank" rel="noopener noreferrer" class="github">
-            GitHub
-        </a>
+        .hero {
+            background: linear-gradient(125deg, #4c278a, #8a55c7);
+            color: #ffffff;
+            padding: 75px 25px 95px;
+        }
 
-        <a href="https://www.facebook.com/nthaiw.206" target="_blank" rel="noopener noreferrer" class="facebook">
-            Facebook
-        </a>
-    </div>
-</section>
+        .hero-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
 
-</div>
+        .hero-text {
+            flex: 1;
+        }
 
-</main>
+        .welcome {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 30px;
+            padding: 7px 18px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
 
-<footer>
-    <p>&copy; 2026 - Nguyễn Tiến Thái | Group 9</p>
-</footer>
+        .hero h1 {
+            font-size: clamp(30px, 5vw, 48px);
+            line-height: 1.2;
+            margin: 10px 0 15px;
+        }
+
+        .hero p {
+            color: #f4eaff;
+            font-size: 17px;
+            max-width: 530px;
+        }
+
+        .avatar-box {
+            width: 230px;
+            height: 230px;
+            flex-shrink: 0;
+            padding: 9px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            border-radius: 25px;
+            transform: rotate(4deg);
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 17px;
+            transform: rotate(-4deg);
+            background: white;
+        }
+
+        /* Phần nội dung */
+
+        .container {
+            max-width: 1100px;
+            margin: -45px auto 0;
+            padding: 0 20px 40px;
+            position: relative;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border: 1px solid #e8e1f3;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(55, 30, 95, 0.07);
+            transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(55, 30, 95, 0.12);
+        }
+
+        .card h2 {
+            color: #532b92;
+            font-size: 22px;
+            margin: 0 0 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #ede5f8;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        /* Thông tin cá nhân */
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info-list li {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eeeaf4;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list strong {
+            color: #4b4360;
+        }
+
+        .info-list span {
+            text-align: right;
+        }
+
+        /* Sở thích */
+
+        .hobbies {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        .hobby {
+            background: #f3edfc;
+            border-radius: 10px;
+            padding: 13px 16px;
+            border-left: 4px solid #8251c1;
+            color: #4d2a80;
+            font-weight: 600;
+        }
+
+        /* Kỹ năng */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background: #eee5fa;
+            border: 1px solid #ddc9f4;
+            color: #502a8d;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .skill:nth-child(even) {
+            background: #e5eefc;
+            border-color: #c7d9f5;
+            color: #214c91;
+        }
+
+        /* Mục tiêu nghề nghiệp */
+
+        .career {
+            background: linear-gradient(125deg, #f2eafa, #e9edfc);
+            padding: 22px;
+            border-radius: 12px;
+            border-left: 5px solid #6c3eae;
+        }
+
+        .career h3 {
+            margin: 0 0 10px;
+            color: #4b2885;
+        }
+
+        .career p {
+            margin: 0;
+            font-size: 17px;
+        }
+
+        /* Mạng xã hội */
+
+        .social {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 22px;
+        }
+
+        .social a {
+            display: inline-block;
+            padding: 11px 24px;
+            border-radius: 9px;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            transition: transform 0.2s ease;
+        }
+
+        .social a:hover {
+            transform: translateY(-3px);
+        }
+
+        .github {
+            background: #24292f;
+        }
+
+        .facebook {
+            background: #175fca;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #30204d;
+            color: #ffffff;
+            padding: 25px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        a:focus-visible {
+            outline: 3px solid #f1b94d;
+            outline-offset: 4px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 760px) {
+            .hero {
+                padding: 50px 20px 80px;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .avatar-box {
+                width: 185px;
+                height: 185px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: auto;
+            }
+
+            .info-list li {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .info-list span {
+                text-align: left;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .card,
+            .social a {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar" aria-label="Điều hướng">
+        <span class="logo">NT THAI.</span>
+        <a href="index.html">← Trở về trang nhóm</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+
+            <div class="hero-text">
+                <span class="welcome">PERSONAL PORTFOLIO</span>
+
+                <h1>Nguyễn Tiến Thái</h1>
+
+                <p>
+                    Sinh viên yêu thích công nghệ và lập trình Web.
+                    Luôn hướng tới phát triển kỹ năng chuyên môn
+                    và khả năng làm việc nhóm.
+                </p>
+            </div>
+
+            <div class="avatar-box">
+                <img src="images/anhtheNTT.jpg" alt="Ảnh đại diện Nguyễn Tiến Thái" class="avatar" width="230"
+                    height="230">
+            </div>
+
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div class="content-grid">
+
+            <section class="card">
+                <h2>01. Thông tin cá nhân</h2>
+
+                <ul class="info-list">
+                    <li>
+                        <strong>Họ và tên</strong>
+                        <span>Nguyễn Tiến Thái</span>
+                    </li>
+
+                    <li>
+                        <strong>Mã sinh viên</strong>
+                        <span>24100277</span>
+                    </li>
+
+                    <li>
+                        <strong>Ngày sinh</strong>
+                        <span>16/09/2006</span>
+                    </li>
+
+                    <li>
+                        <strong>Giới tính</strong>
+                        <span>Nam</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>02. Sở thích</h2>
+
+                <div class="hobbies">
+                    <div class="hobby">📚 Đọc sách công nghệ</div>
+                    <div class="hobby">⚽ Đá bóng</div>
+                    <div class="hobby">🎧 Nghe nhạc Lofi</div>
+                </div>
+            </section>
+
+            <section class="card full">
+                <h2>03. Sở trường &amp; Kỹ năng</h2>
+
+                <div class="skills">
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">Lập trình Web</span>
+                    <span class="skill">Làm việc nhóm</span>
+                    <span class="skill">Giải quyết vấn đề</span>
+                </div>
+            </section>
+
+            <section class="card full">
+                <h2>04. Định hướng tương lai</h2>
+
+                <div class="career">
+                    <h3>Mục tiêu nghề nghiệp</h3>
+                    <p>
+                        Trở thành Full-stack Developer
+                        trong 2 năm tới.
+                    </p>
+                </div>
+
+                <div class="social">
+                    <a href="https://github.com/nthaiw206" target="_blank" rel="noopener noreferrer" class="github">
+                        GitHub
+                    </a>
+
+                    <a href="https://www.facebook.com/nthaiw.206" target="_blank" rel="noopener noreferrer"
+                        class="facebook">
+                        Facebook
+                    </a>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Nguyễn Tiến Thái | Group 9</p>
+    </footer>
 
 </body>
 
