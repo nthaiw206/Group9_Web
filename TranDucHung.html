@@ -4,49 +4,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Giới Thiệu Cá Nhân-Trần Đức Hùng</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#174887">
+    <meta name="description" content="Trang giới thiệu cá nhân Trần Đức Hùng - Nhóm 9.">
+    <title>Trang Giới Thiệu Cá Nhân - Trần Đức Hùng</title>
+    
+    <link rel="stylesheet" href="tran-duc-hung.css">
+    <script src="tran-duc-hung.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <h1>Trang Giới Thiệu Cá Nhân</h1>
+    <header class="topbar" id="dau-trang">
+        <div class="topbar-brand">
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Ẩn hoặc hiện danh mục"
+                aria-controls="pageSidebar" aria-expanded="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <span class="topbar-title">THÔNG TIN CÁ NHÂN</span>
+        </div>
+        <div class="topbar-actions">
+            <span class="topbar-avatar" aria-hidden="true">H</span>
+            <div class="topbar-user">
+                <strong>Trần Đức Hùng</strong>
+                <span>24100472</span>
+            </div>
+            <a class="topbar-return" href="index.html" title="Quay lại danh sách nhóm"
+                aria-label="Quay lại danh sách nhóm">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 10.5 12 3l9 7.5V21h-6v-7H9v7H3z" />
+                </svg>
+                <span>Danh sách nhóm</span>
+            </a>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <img src="images/anhtheTDH.jpg" alt="Ảnh đại diện của Trần Đức Hùng" width="150" height="150">
-            <h2>Thông Tin Cơ Bản</h2>
-            <ul>
-                <li><strong>Họ và tên:</strong> Trần Đức Hùng</li>
-                <li><strong>Mã sinh viên:</strong> 24100472</li>
-                <li><strong>Ngày sinh:</strong> 14/05/2006</li>
-                <li><strong>Giới tính:</strong> Nam</li>
-            </ul>
+    <div class="page-container">
+        <p class="page-notice">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 11v5M12 8h.01" />
+            </svg>
+            Trang giới thiệu cá nhân
+        </p>
+
+        <section class="profile" id="thong-tin-co-ban" aria-labelledby="profileTitle">
+            <div class="photo-column">
+                <div class="photo-frame">
+                    <img src="images/anhtheTDH.jpg" alt="Ảnh đại diện của Trần Đức Hùng" width="354" height="472">
+                </div>
+            </div>
+            <div class="profile-main">
+                <div class="profile-heading">
+                    <h1 id="profileTitle">THÔNG TIN CƠ BẢN</h1>
+                </div>
+                <dl class="profile-grid">
+                    <div class="profile-field">
+                        <dt>Họ và tên</dt>
+                        <dd>Trần Đức Hùng</dd>
+                    </div>
+                    <div class="profile-field">
+                        <dt>Mã sinh viên</dt>
+                        <dd>24100472</dd>
+                    </div>
+                    <div class="profile-field">
+                        <dt>Ngày sinh</dt>
+                        <dd>14/05/2006</dd>
+                    </div>
+                    <div class="profile-field">
+                        <dt>Giới tính</dt>
+                        <dd>Nam</dd>
+                    </div>
+                </dl>
+            </div>
         </section>
 
-        <section>
-            <h2>Sở Thích & Sở Trường</h2>
-            <p><strong>Sở thích:</strong> Đá bóng, nghe nhạc, chơi game, ngủ.</p>
-            <p><strong>Sở trường:</strong> Thiết kế giao diện (UI/UX), sáng tạo nội dung, thành thạo Photoshop.
-            </p>
-        </section>
+        <div class="body-layout">
+            <aside class="sidebar" id="pageSidebar" aria-label="Danh mục thông tin cá nhân">
+                <div class="sidebar-label">DANH MỤC</div>
+                <nav class="side-links" aria-label="Các phần của trang">
+                    <a class="side-link active" href="#thong-tin-co-ban" aria-current="location">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="7" r="4" />
+                            <path d="M4 21v-2a8 8 0 0 1 16 0v2" />
+                        </svg>
+                        <span>Thông tin cơ bản</span>
+                    </a>
+                    <a class="side-link" href="#so-thich-so-truong">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m12 2 3.1 6.3 7 1-5 4.9 1.2 7-6.3-3.3-6.3 3.3 1.2-7-5-4.9 7-1z" />
+                        </svg>
+                        <span>Sở thích &amp; sở trường</span>
+                    </a>
+                    <a class="side-link" href="#thong-tin-bo-sung">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="3" y="7" width="18" height="14" rx="2" />
+                            <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18" />
+                        </svg>
+                        <span>Thông tin bổ sung</span>
+                    </a>
+                </nav>
+                <div class="sidebar-foot">
+                    <div class="sidebar-group-name">NHÓM 9</div>
+                    <a href="index.html" class="group-link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m14 18-6-6 6-6M8 12h13" />
+                        </svg>
+                        Quay lại danh sách nhóm
+                    </a>
+                </div>
+            </aside>
 
-        <section>
-            <h2>Thông Tin Bổ Sung</h2>
-            <p><strong>Mục tiêu nghề nghiệp:</strong> Trở thành Chuyên viên Thiết kế Giao diện.</p>
-            <p><strong>Liên kết mạng xã hội:</strong>
-                <a href="?" target="_blank">GitHub</a> |
-                <a href="?" target="_blank">Facebook</a>
-            </p>
-        </section>
-    </main>
-</body>
-<hr>
-<p>
-    <a href="index.html">← Quay lại trang danh sách nhóm</a>
-</p>
-</main>
+            <main class="content">
+                <section class="content-section" id="so-thich-so-truong" aria-labelledby="hobbyTitle">
+                    <div class="content-heading">
+                        <div>
+                            <span class="heading-eyebrow">GIỚI THIỆU BẢN THÂN</span>
+                            <h2 id="hobbyTitle">Sở Thích &amp; Sở Trường</h2>
+                        </div>
+                        <span class="heading-mark" aria-hidden="true">01</span>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="info-block-heading">
+                            <span class="block-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="m12 3 2.7 5.5 6 .9-4.4 4.2 1 6-5.3-2.8-5.4 2.8 1.1-6L3.3 9.4l6-.9z" />
+                                </svg>
+                            </span>
+                            <h3>Sở thích</h3>
+                        </div>
+                        <p class="info-line"><strong>Sở thích:</strong> Đá bóng, nghe nhạc, chơi game, ngủ.</p>
+                        <div class="interest-tags" aria-label="Danh sách sở thích">
+                            <span>Đá bóng</span>
+                            <span>Nghe nhạc</span>
+                            <span>Chơi game</span>
+                            <span>Ngủ</span>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="info-block-heading">
+                            <span class="block-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M4 18h16M7 15l4-4 3 3 5-7" />
+                                    <path d="M4 4v16h16" />
+                                </svg>
+                            </span>
+                            <h3>Sở trường</h3>
+                        </div>
+                        <p class="info-line"><strong>Sở trường:</strong> Thiết kế giao diện (UI/UX), sáng tạo nội dung,
+                            thành thạo Photoshop.</p>
+                        <div class="skill-items" aria-label="Danh sách sở trường">
+                            <span>Thiết kế giao diện (UI/UX)</span>
+                            <span>Sáng tạo nội dung</span>
+                            <span>Thành thạo Photoshop</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section extra-section" id="thong-tin-bo-sung" aria-labelledby="extraTitle">
+                    <div class="content-heading">
+                        <div>
+                            <span class="heading-eyebrow">ĐỊNH HƯỚNG VÀ KẾT NỐI</span>
+                            <h2 id="extraTitle">Thông Tin Bổ Sung</h2>
+                        </div>
+                        <span class="heading-mark" aria-hidden="true">02</span>
+                    </div>
+                    <div class="additional-info">
+                        <div class="additional-row">
+                            <div class="additional-label">Mục tiêu nghề nghiệp</div>
+                            <div class="additional-value">Trở thành Chuyên viên Thiết kế Giao diện.</div>
+                        </div>
+                        <div class="additional-row">
+                            <div class="additional-label">Liên kết mạng xã hội</div>
+                            <div class="additional-value social-list">
+                                <a class="social-tag" href="https://github.com/SiraHungNee" target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Mở trang GitHub của Trần Đức Hùng (tab mới)">GitHub ↗</a>
+                                <span class="social-divider" aria-hidden="true">|</span>
+                                <a class="social-tag" href="https://www.facebook.com/tran.hung.1405" target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Mở trang Facebook của Trần Đức Hùng (tab mới)">Facebook ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <footer class="page-footer">
+            <span>Trang Giới Thiệu Cá Nhân — Trần Đức Hùng</span>
+            <a href="index.html">← Quay lại trang danh sách nhóm</a>
+        </footer>
+    </div>
 </body>
 
 </html>
